@@ -26,7 +26,7 @@ browsing a month, the most popular posts for that month are shown, etc.
 
 			<li><h2>Most Popular in '<?php single_cat_title(''); ?>'</h2>
 				<ul>
-				<?php akpc_most_popular_in_cat(); ?>
+				<?php if (function_exists('akpc_most_popular_in_cat')) { akpc_most_popular_in_cat(); } ?>
 				</ul>
 			</li>
 			
@@ -40,7 +40,7 @@ browsing a month, the most popular posts for that month are shown, etc.
 
 			<li><h2>Most Popular in <?php the_time('F, Y'); ?></h2>
 				<ul>
-				<?php akpc_most_popular_in_month(); ?>
+				<?php if (function_exists('akpc_most_popular_in_month')) { akpc_most_popular_in_month(); } ?>	
 				</ul>
 			</li>
 
@@ -61,7 +61,7 @@ browsing a month, the most popular posts for that month are shown, etc.
 			<?php if (!is_archive() && !is_category()) { ?>
 			<li><h2>Most Popular Posts</h2>
 				<ul>
-				<?php akpc_most_popular(); ?>
+				<?php if (function_exists('akpc_most_popular')) { akpc_most_popular(); } ?>	
 				</ul>
 			</li>
 			<?php } ?>
